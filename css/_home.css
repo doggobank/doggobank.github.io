@@ -84,11 +84,17 @@ div.goalcont ul{
   margin:0px auto;
   z-index:5;
 }
+#holf_p3{
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/cashcoins.png') no-repeat;
+  background-position: center 250px;
+  background-size:cover;
+}
 /* NEON WE ARE OPEN */
 .directionsplease {
   position:relative;
   z-index:5;
   font-family: 'Exo 2', sans-serif;
+  text-align:center;
   display: flex;
   justify-content: center;
   align-items: center; 
@@ -635,7 +641,6 @@ div.goalcont ul{
 }
 .vcardrow_title{
 	flex:50%;
-	padding:2px 2%;
 	box-sizing:border-box;
 	font-family:monospace, sans-serif, "Helvetica Neue", Helvetica, "Liberation Sans";
 	font-size: clamp(12px, 1vw, 14.5px) !important;
