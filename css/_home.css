@@ -849,6 +849,8 @@ div.goalcont ul{
   color:#fff;
 }
 .missionbrief{
+  max-width: 900px;
+  margin: 50px auto;
   font-size: clamp(15px, 2vw, 18px);
   text-align:center;
   color:#ffb300;
