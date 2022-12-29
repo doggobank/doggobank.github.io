@@ -53,6 +53,20 @@ function updatemenu() {
   }
 }
 
+ //which tab is highlighted
+ $(document).ready(function(){
+		$('#bankfunded').css({'background-color' : '#04C86C'});//left panel
+		$('#filterblockSwaps').css({'border' : '1px solid #04C86C'});//try #87CEFA
+});
+$(document).on('click', '.streamtype', function(e){
+    $('.streamtype').removeAttr('style'); //reset styles
+    $(this).css({'border' : '1px solid #04C86C'});//set style
+    
+});
+$(document).on('click', '.prodcat-item-hold', function(e){
+    $('.prodcat-item-hold').removeAttr('style'); //reset styles
+    $(this).css({'border' : '1px solid #04C86C'});//set style
+});
 
 </script>
 </head>
@@ -96,19 +110,19 @@ function updatemenu() {
                     <h4>> Banking Hall</h4>
                 </div>
                 <div class="sal_navs_hold">
-                    <div class="saloonnavs" id="sal_main">Bank Funding</div>
+                    <div class="saloonnavs" id="bankfunded">Bank FairLaunches</div>
                 </div>
                 <div class="sal_navs_hold">
-                    <div class="saloonnavs" id="sal_deriv">P2P Funding</div>
+                    <div class="saloonnavs" id="walletfunded">Crowd FairLaunches</div>
                 </div>
                 <div class="sal_navs_hold">
-                    <div class="saloonnavs" id="sal_deriv">Bank Loans</div>
+                    <div class="saloonnavs" id="bankloans">Bank Loans</div>
                 </div>
                 <div class="sal_navs_hold">
-                    <div class="saloonnavs" id="sal_deriv">P2P Loans</div>
+                    <div class="saloonnavs" id="walletloans">Crowd Loans</div>
                 </div>
                 <div class="sal_navs_hold">
-                    <div class="saloonnavs" id="sal_deriv">Social Stream</div>
+                    <div class="saloonnavs" id="socialstream">Social Stream</div>
                 </div>
                 <section id="holf_p6">
                     <div class="contacts_cont">
@@ -123,10 +137,10 @@ function updatemenu() {
             <!-- timeline of projects funded|loans|repaying -->
             <div class="timelineHold">
                 <div class="feedsfilterDockHold">
-                    <div  class="streamtype" id="filterblockSwaps"><div class="eventAct" > <a href="#" > Requests</a></div></div>
-                    <div  class="streamtype" id="filterblockActive"><div class="eventAct" > <a href="#" > Funded</a></div></div>
-                    <div  class="streamtype" id="filterblockSaved"><div class="eventAct" > <a href="#" > Repayments</a></div></div>
-                    <div  class="streamtype" id="filterblockThotbox"><div class="eventAct" > <a href="#" > Apply</a></div></div>
+                    <div  class="streamtype" id="filterblockSwaps"><div class="eventAct" > <a href="#" > Fund Launches</a></div></div>
+                    <div  class="streamtype" id="filterblockActive"><div class="eventAct" > <a href="#" > Funded Launches</a></div></div>
+                    <div  class="streamtype" id="filterblockSaved"><div class="eventAct" > <a href="#" > Projects Repaying</a></div></div>
+                    <div  class="streamtype" id="filterblockThotbox"><div class="eventAct" > <a href="#" > Ask Funding</a></div></div>
                     
                     <div class="sitesearchhold" id="feedsearchhold">
                         <form id="swap_searcher" action="" method="post">
