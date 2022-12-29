@@ -729,7 +729,7 @@ div.goalcont ul{
   border-bottom:2px solid #ffb300;
   font-family:monospace, sans-serif, "Helvetica Neue", Helvetica, Arial !important;
 
-  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) ), url('../img/blockchain_orange.jpg') no-repeat;
+  background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) ), url('../img/blockchain_blurry.jpg') no-repeat;
   background-position: center;
   background-size:cover;
   
