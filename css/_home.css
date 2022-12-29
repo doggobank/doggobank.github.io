@@ -818,6 +818,7 @@ div.goalcont ul{
   list-style: none;
 }
 .featuresList span{
+  display: block;
   color:#ffb300;
   margin:10px auto;
 }
