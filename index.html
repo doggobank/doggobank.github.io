@@ -1,0 +1,444 @@
+<html>
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LDVJJSFRP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LDVJJSFRP0');
+</script>
+
+
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Doge Bank</title>
+<base href="{{site.baseurl}}" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="img/fav/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="img/fav/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" type="text/css" href="css/_menu.css">
+<link rel="stylesheet" type="text/css" href="css/_home.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><!-- font5 css stickers -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script>
+    //Responsive Nav
+    function updatemenu() {
+        if (document.getElementById('responsive-menu').checked == true) {
+            document.getElementById('menu').style.borderBottomRightRadius = '0';
+            document.getElementById('menu').style.borderBottomLeftRadius = '0';
+        }else{
+            document.getElementById('menu').style.borderRadius = '0px';
+        }
+    }
+    var docWidth = document.documentElement.offsetWidth;
+
+[].forEach.call(
+  document.querySelectorAll('*'),
+  function(el) {
+    if (el.offsetWidth > docWidth) {
+      console.log(el);
+    }
+  }
+);
+</script>
+</head>
+
+<body>
+
+<nav id='menu'>
+    <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+    <ul>
+        <li class="go_home"><a href='index.html'><img src="img/dogebankerLOGO.png" alt="Logo" class="block-header-logo__image"></a></li>
+        <div class="chainstat">
+            <div id="blocknumber" class="blockel">-------</div><div class="dot blockel"></div>
+        </div>
+        <div class="menu_float">
+            <li><a href='portfolio.html'>Wallet</a></li>
+        </div>
+        <div class="menu_float" style="margin-right:4%;">
+            <li><a href='bankhall.html'>Vault</a></li>
+        </div>
+        <div class="menu_float" style="margin-right:4%;">
+            <li><a href='bankhall.html'>BankHall</a></li>
+        </div>
+    </ul>
+</nav>
+<section id="holf">
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="snowflake">❅</div>
+    <div class="snowflake">❆</div>
+    <div class="snowflake">❄</div>
+    <div class="goalcont">
+        <!-- 
+        <ul class="betinuTitle">
+            <h4>DOGE BANK</h4>
+        </ul> -->
+        <div class="container">
+            <div class="neon">Doge </div>
+            <div class="flux">Bank </div>
+        </div>
+        <div id="betinulogo"></div>
+        
+        <div id="taglines">      
+            <span class="main_points"><h1 class="glitch">Doge Bank is a Decentralised Bank on the Blockchain.</br>We aim to Bank all Meme projects & communities.</br>We Bankroll Fair Launches Initial Liquidity.</br>We facilitate Cash Loans for established projects.</br>We accept LP tokens as collateral.</br>We host a Fixed Term Deposits Cash Vault with interest.</br>We Bridge Finance between projects & investors directly.</h1></span></br>
+        </div>
+        <div class="p1_links_cont">
+            <a class="p1_links" href="https://goerli.etherscan.io/address/" target="_blank">ETHERscan</a><a class="p1_links" href="https://app.uniswap.org/#/swap?chain=goerli&outputCurrency=0x0" target="_blank" title="GOERLI TESTNET">Uniswap</a><button class="p1_links" title="not available on Testnet">Dextools</button> </br>
+            <a class="p1_download_links" href="resources/DogeBank_technical_litepaper.pdf" target="_blank">Download Manifesto</a>
+        </div>
+    </div>
+</section>
+
+<section id="holf_p2">
+    <div class="background-container">
+        <div class="directionsplease">
+            <h1 contenteditable spellcheck="false">beta soon</h1>
+        </div>
+        
+        
+        <div class="sectionsides"><!-- side left -->
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker1.png" alt="image" /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Fund Fair Launches</div>
+                    <div class="fdetail fd_foot">Discover fair launches to finance risk free and get repaid directly from funded project's taxes. I.e Contribute $100, receive $120 in a few hours from trading start.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            </br>
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker3.png" alt="image" /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Secure Interface</div>
+                    <div class="fdetail fd_foot">We want to provide a safe enviroment for our investors to fund projects in. As such: Projects that are funded by our contract have to implement our interface correctly to guarantee repayment.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            </br>
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker6.png" alt="image" /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Zero application cost</div>
+                    <div class="fdetail fd_foot">Projects that are requesting/applying for funding or loans pay no cost to us. They only have to repay with a fixed interest.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            </br>
+            <div class="featurecard">
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker7.png" alt="image"  /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Smart Funding with collateral.</div>
+                    <div class="fdetail fd_foot">When a project's Fair Launch initial liquidity is funded by our function, that project's LP tokens go directly to our vault. We recognise LP tokens as collateral.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            
+        </div><!-- close FUCK YOU side section -->
+        
+        <div class="sectionsides"><!-- side right-->
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker9.png" alt="image"  /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Collaterised loans</div>
+                    <div class="fdetail fd_foot">Loan your extra cash to projects looking for loans, collaterised by LP tokens. Terms and procedure for requesting projects is different from fair launches.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            </br>
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker10.png" alt="image" /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Deposit money into our fixed term vault</div>
+                    <div class="fdetail fd_foot">Projects or individuals can deposit money into our vault. The bank like any other then uses this as capital to finance selected premium fair launches or issue collaterised loans.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            </br>
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker8.png" alt="image" /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">LP Tokens custodial services</div>
+                    <div class="fdetail fd_foot">Our LP tokens vault facilitates custodial service. During which you are also eligible to borrow money from the Bank using the same.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+            </br>
+            <div class="featurecard"><!-- OPEN FC -->
+                <div class="feature_aside">
+                    <div class="fthumb"><img src="img/dogebanker4.png" alt="image" /></div>
+                </div>
+                <div class="feature_section">
+                    <div class="fdetail fd_head">Grand scheme</div>
+                    <div class="fdetail fd_foot">Hundreds of fair launches happen each day, with millions of volume. We aim to tap into this with zero risk. Our platform aims to open a new investment avenue for our investors all year round.</div>
+                </div>
+            </div><!-- CLOSE FEATURE CARD -->
+        </div><!-- close side section -->
+        <div class="quotediv">,,</div>
+    </div><!-- CLOSE BACKGROUND CONTAINER -->
+    <!-- Quantity should be the same in Sass-->
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+</section>
+
+<section>
+    <div class="Aboutus">
+        </br></br>
+        <div class="missionintro aboutHeader">What is Doge Bank?</div>
+        <li>Doge Bank was forged in the popular meme fire of fair launches.</li>
+        <li>We saw a gap in the market where liquidity is in short supply yet in so much demand.</li>
+        <li>New projects facing liquidity issues die off, those that auto add LP have a chance.</li>
+        <li>Private sales have their own downside, as presalers dump or project owners rug.</li>
+        <li>Liquidity miners who normally feared impermanant loss now fear losing it all.</li>
+        <li>The solution for us was to create Doge Bank (Meme Bank), we aim to achieve risk free liquidity mining.</li>
+        <li>In addition, we recognise LP tokens as sound collateral, thus opening the door to P2P collaterised loans.</li>
+        <li>We rely on transaction taxes for repayment directly to our investors, with interest per dollar capital, per project financed.</li>
+        <li>LP tokens for any financed project go directly to our vault (fuck around on repayments and find out).</li>
+    </br>
+        <div>This is a Bank. We accept deposits for interest. We fund fair launches for interest. We issue loans for interest. The aim is for a risk free investment engine for our investors. Fair launches and memes are not going away anytime. We can support projects and make risk free money.</div>
+        <div class="missionintro">Our Banking Protocol relies on 3 smart contracts. </br>Beta testing will be available soon on Goerli testnet.</div>
+    </br></br>
+    </div>
+    <div class="whattoexpect">
+        <div class="directionsplease">
+            <h1 contenteditable spellcheck="false">what to expect</h1>
+        </div>
+    </br></br>
+        <div class="missionbrief">You will be able to watch all the metrics closely to see how the Bank is perfoming. This will be split further to Bank versus Wallets metrics when live.</div>
+        <div class="vaultTrackersHold">
+            <!-- vault 1 - cash -->
+            <div class="vaultTracker">
+                <div class="vaultTop bounce">
+                    <div class="vtopBar"></div><div class="vtopBar vtopBarUpright"></div><div class="vtopHinge"></div>
+                </div>
+                <div class="vaultBottom">
+                    <div class="vaultCard">
+                        <div class="vcard_title"><span class="vcard_title">Vault - Fixed Deposits</span>&emsp;<img title="this tracks the Banks Cash Vault." src="img/info.png" /></div>
+                        <div class="vcard_detail">
+                            <span class="vBalance">106.38 ETH Bal</span>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">deposits:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">150.41 ETH</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">withdraws:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">10.41 ETH</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title" title="sent to main smart contract current acc as Bank liquidity">liquidity:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">33.62 ETH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- vault 2 - lp-->
+            <div class="vaultTracker">
+                <div class="vaultTop wiggle">
+                    <div class="vtopBar"></div><div class="vtopBar vtopBarUpright"></div><div class="vtopHinge"></div>
+                </div>
+                <div class="vaultBottom">
+                    <div class="vaultCard">
+                        <div class="vcard_title"><span class="vcard_title">Vault - LP Tokens</span>&emsp;<img title="this tracks the LP tokens deposited into Vault." src="img/info.png" /></div>
+                        <div class="vcard_detail">
+                            <span class="vBalance">+4,000,000 tokens</span>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">funding:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">2,507,332</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">collateral:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">1,080,500</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">custodial:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">670,430</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- fair launch tracker-->
+            <div class="vaultTracker bounce">
+                <div class="vaultBottom">
+                    <div class="vaultCard">
+                        <div class="vcard_title"><span class="vcard_title">Fair Launch Funding</span>&emsp;<img title="this tracks the funded projects." src="img/info.png" /></div>
+                        <div class="vcard_detail">
+                            <span class="vBalance">+700 FL Requests</span>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">funded:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">40 ETH</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">repaid:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">56 ETH</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">withdrawn:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">35 ETH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- loans tracker-->
+            <div class="vaultTracker wiggle">
+                <div class="vaultBottom">
+                    <div class="vaultCard">
+                        <div class="vcard_title"><span class="vcard_title">collateralized Loans</span>&emsp;<img title="this tracks collateralized loans by projects and investors." src="img/info.png" /></div>
+                        <div class="vcard_detail">
+                            <span class="vBalance">+700 Loan Requests</span>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">issued:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">20 ETH</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">repaid:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">23 ETH</span>
+                            </div>
+                            <div class="vcardrow">
+                                <span class="vcardrow_title">withdrawn:</span>
+                                <span id="vcard_deposits" class="vcardrow_data">16 ETH</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chainsavailable">
+        <h1>Blockchains Supported</h1>
+        <div class="missionbrief">We plan on launching on Ethereum Mainnet first. This is because of the high volume and more supportive nature of investors on this chain.</br> In Q1 2023 will will start expanding onto other chains: Binance Smart Chain, Fantom, etc.</div>
+        <div class="chains">
+            <div class="chainHold">
+                <div class="chainIcon"  style="background-image:url('img/ethereum.png')"></div>
+                <div class="chainName">Ethereum</div>
+            </div>
+            <div class="chainHold">
+                <div class="chainIcon"  style="background-image:url('img/bsc.png')"></div>
+                <div class="chainName">Binance</div>
+            </div>
+            <div class="chainHold">
+                <div class="chainIcon"  style="background-image:url('img/fantom.png')"></div>
+                <div class="chainName">Fantom</div>
+            </div>
+            <div class="chainHold">
+                <div class="chainIcon"  style="background-image:url('img/avalanche.png')"></div>
+                <div class="chainName">Avalanche</div>
+            </div>
+        </div>
+    </div>
+    <div class="features featuresList">
+        <h1>Features List</h1>
+        <span>In no particular order, current features available:</span>
+        <li>Wallet issued loans.</li>
+        <li>Bank issued loans.</li>
+        <li>Wallet funded Initial Liquidity direct to the LP of the fair launch.</li>
+        <li>Bank funded Initial Liquidity, also direct to LP.</li>
+        <li>LP tokens vault.</li>
+        <li>Fixed term deposits cash vault.</li>
+        <li>Bank can move funding between cash vault and Bank funding contract.</li>
+        <li>Funding function to accept funds into current account.</li>
+        <li>Repayment function to repay funds to vault with dividents.</li>
+        <li>Funding function to point to the Smart Contract and LP of the requesting project.</li>
+        <li>Funding function to issue loan to the receiving address of the requesting project.</li>
+        <li>Only requesting project owner can apply for funding or loans.</li>
+        <li>Funding application happens only once, stored in mapping by project address.</li>
+        <li>Loan applications happen continous on conditions to previous loans.</li>
+        <li>All repayments are done with fixed interest directly to the funders: bank or individual investors.</li>
+        <li>All applications should meet criteria: correct project details, correct addresses provided (incl router and factory), correct implementation of our interface/functions in applicants smart contract.</li>
+        <li>Projects choose when applying to be funded or loaned by: Bank or P2P (individuals).</li>
+        <li>All applications are vetted and then stamped an approval or denial. Re-applications allowed.</li>
+        <li>All stamped requests/applications are automatically open for funding after.</li>
+        <li>LP tokens collected as collateral during fair launch funding have to be manually mapped by admins: using returned address from receiving SC interface implementation.</li>
+        <li>Project settlement function: admin after removing liquidity from defaulted projects LP can repay proceeds direct to Project struct.</li>
+        <li>Each investor wallet can track the projects they have funded or loaned.</li>
+        <li>An array of all funded projects ever is kept: for both bank and individuals collective.</li>
+        <li>A current account is kept by the Bank, funded directly by vault or repayments.</li>
+        <li>LP tokens vault has capability for custodial services outside of loans and funding fair launches.</li>
+        <li>Token holders of the Banks tokens earn reflections, including from dividents from the Banks current account.</li>
+        <li>These reflections can be reassigned by each investor to a beneficiary wallet of choice: i.e. add siblings wallet, charity wallet</li>
+        <li>P2P funders or wallets can withdraw their capital and interest manually, its kept on our contract under the funded project's address.</li>
+        <li>Funded projects can have limited or unlimited cap on repayment amount.</li>
+        <li>Projects that borrow larger amounts will have unlimited or longer caps: i.e. they can pay initial capital back then continued taxes for agreed days.</li>
+        <li>This is still testnet, more functionality can be added, and some functions adjusted after or during Beta testing.</li>
+    </div>
+    <div class="tokenomics">
+        </br></br>
+        <div class="extranotes">Tokenomics</div>
+        <li><span>500 million Total Token Supply</span></li>
+        <li><span>Liquidity adding & Bonfire function hardcoded</span></li>
+        <li><span>Max wallet 1% of total supply</span></li>
+        <li><span>Initial Taxes 5/5</span></li>
+        <li><span>Tax revenue is split between marketing and reflections.</span></li>
+    </br>
+    </div>
+    <div class="tokenomics">
+        </br>
+        <div class="extranotes">Whats next</div>
+        <li><span>Fair Launch planning: xx-xx-xxxx.</span></li>
+        <li><span>Beta testing to start within 1 week of launch.</span></li>
+        <li><span>Final Audit will be done from project revenue, before main protocol launch.</span></li>
+        <li><span>Short term, we will spend resources on: front-end builds, tonnes of marketing, shaping the brand.</span></li>
+    </br></br>
+    </div>
+</section>
+
+<section id="holf_p6">
+	<div class="contacts_cont">
+    	<span>join us here:</span></br></br>
+        <a class="social_links" href="https://twitter.com/dogebank" target="_blank" alt="Twitter Page" title="Go to Twitter page"><img src="img/twitter.svg" width="32px"/></a>
+        <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="Telegram Group" title="Go to Telegram group"><img src="img/telegram.svg" width="32px"/></a>
+	</div>
+</section>
+<!-- LOADING OVERLAY-->
+<div id="loadOverlay" style="background: radial-gradient(#1f1f1f, #000); position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:2000;">
+    <div class="loading_badge_place" style="position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);height:15vw;width:15vw;text-align:center;z-index:150;background: url('img/footy-inu-blue.png') no-repeat; background-position: center; background-repeat:no-repeat;  background-size:300px auto;">
+        
+    </div>
+</div>
+</body>
+</html>
