@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P34PL8WQZ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P34PL8WQZ0');
+</script>
+
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> long for <meta charset="utf-8" />  -->
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>Wallet</title>
+<base href="{{site.baseurl}}" />
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="img/fav/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="img/fav/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="css/_menu.css">
+<link rel="stylesheet" type="text/css" href="css/_portfolio.css">
+<link rel="stylesheet" type="text/css" href="css/_rbw.css">
+<link rel="stylesheet" type="text/css" href="css/_sharelease.css">
+<link rel="stylesheet" type="text/css" href="css/_atm_actioncards.css">
+<link rel="stylesheet" type="text/css" href="css/_sharelease.css"><!-- this only shares styles for hypecards -->
+<link rel="stylesheet" type="text/css" href="css/_atm_playRRcard.css"><!-- playing card was just too big -->
+<link rel="stylesheet" type="text/css" href="css/_rrgame.css">
+<link rel="stylesheet" type="text/css" href="css/sweetalert/sweetalert2.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="js/_walletstatus.js"></script>
+<script type="text/javascript" src="js/_portfolio.js"></script>
+<script type="text/javascript" src="js/_hypecards.js"></script>
+<script type="text/javascript" src="js/_rbw.js"></script>
+<script type="text/javascript" src="js/_sharelease.js"></script>
+<script type="text/javascript" src="js/_revolver_game.js"></script>
+<script type="text/javascript" src="js/_inclHTMLincluder.js"></script>
+<script type="application/javascript" src="js/sweetalert/sweetalert.min.js"></script>
+<script>
+//Responsive Nav
+function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '0px';
+  }
+}
+//TYPEWRITER
+document.addEventListener('DOMContentLoaded',function(event){
+	// array with texts to type in typewriter
+	var dataText = ["Manage and track your wallet from here. See information about your dBank tokens.","Check out the multi benefactor utility tool.","assign another wallet to claim your rewards, or claim from multiple accounts in one tx.","check out your donors and how much you can claim. track rewards you are donating.","Bank Account Interface coming soon... youll be able to track Fair Launches you have funded, loans funded, and profits made.", "Coming soon...You'll also be able to view your Vault deposits and jump to vault from here!."];
+	// type one text in the typwriter
+	// keeps calling itself until the text is finished
+	function typeWriter(text, i, fnCallback) {
+		// chekc if text isn't finished yet
+		if (i < (text.length)) {
+			// add next character to h1
+			document.querySelector(".intro_").innerHTML = text.substring(0, i+1) +'<span id="typewrite" aria-hidden="true"></span>';
+			// wait for a while and call this function again for next character
+			setTimeout(function() {
+				typeWriter(text, i + 1, fnCallback)
+			}, 100);
+    	}
+		// text finished, call callback if there is a callback function
+		else if (typeof fnCallback == 'function') {
+		// call callback after timeout
+		setTimeout(fnCallback, 700);
+		}
+	}
+	// start a typewriter animation for a text in the dataText array
+	function StartTextAnimation(i) {
+		if (typeof dataText[i] == 'undefined'){
+			setTimeout(function() {
+				StartTextAnimation(0);
+			}, 20000);
+		}else{
+			// check if dataText[i] exists
+			if (i < dataText[i].length) {
+				// text exists! start typewriter animation
+				typeWriter(dataText[i], 0, function(){
+				// after callback (and whole text has been animated), start next text
+				StartTextAnimation(i + 1);
+				});
+			}
+		}
+	}
+	// start the text animation
+	StartTextAnimation(0);
+});
+</script>
+</head>
+
+<body>
+    <main id="main">
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <div class="blockstatehold" id="blockstatehold" style="position: absolute;top:10px;right:0;left:0;margin-right:auto;margin-left:auto;">
+                <div class="showingshold">
+                    <div class="wallets walletpur" style="display:none;">
+                        <div class="wallet_tab">
+                            <span id="wallet_balance">...</span><img src="img/walletimg.svg" /><span id="wallet_id">0x...</span>
+                        </div>
+                     </div>
+                     <div class="wallets waiting_init">-----</div>
+                     <div class="wallets wallet_connect">Connect Wallet</div>
+                     <div class="wallets network_switch">Switch Network</div>
+                </div>
+            </div>
+            <ul>
+                <li class="go_home"><a href='index.html'><img src="img/dogebankerLOGO.png" alt="Logo" class="block-header-logo__image"></a></li>
+                <div class="chainstat">
+                    <div id="blocknumber" class="blockel">-------</div><div class="dot blockel"></div>
+                </div>
+                <div class="menu_float">
+                    <li><a href='portfolio.html'>Wallet</a></li>
+                </div>
+                <div class="menu_float" style="margin-right:4%;">
+                    <li><a href='bankhall.html'>Vault</a></li>
+                </div>
+                <div class="menu_float" style="margin-right:4%;">
+                    <li><a href='bankhall.html'>BankHall</a></li>
+                </div>
+            </ul>
+        </nav>
+        <div id="mainwindow">
+            <section class="introbanner">
+                <div class="windows_shift">
+                    <div class="container">
+						<div class="sign">
+							<div class="neon-blue" id="title">D<span id="fade">ash</span>Board</div>
+							<div class="neon-blue">wallet <span class="neon-purple" id="trav">tools</span> & <span class="neon-purple">Stats</span></div>
+						</div>
+					</div>
+					<div class="intro_cont"><div class="intro_"></div></div>
+                </div>
+            </section>
+         </div><!-- mainwindow -->
+         </br>
+         <section class="claimsSect">
+            <div class="myClaims">
+				<h4>...</h4>
+				<!-- include hypecards module --> 
+				<div hypecards-include-html="resources/_incl_hypecards.html"></div> 
+				<h4>.</h4>
+				<!-- Russian Roulette Wormhole -->
+				<div class="letsPlay">
+					<section id="RRwormhole">
+						<span class="wormholeTitle">surprise feature coming soon...</span>
+						<div class="rouletteHead">
+                        	<span class="rouletteIntro"><h1>-- you brought a gun --</h1></span>
+                            <span class="rouletteBrief">
+                            	<p>Its Bank Heist time, do you have what it takes to pull the trigger?...</p>
+                            </span>
+                        </div>
+                        <div class="rr_play_container">
+							<div class="animate three" id="rr_instructions">
+								<p><b>Rules: </b></br></p>
+								<li>Max of 3 plays per day.</li>
+								<li>Wallet needs to hold at least 50000 Tokens to play.</li>
+								<li>Each play has 1 in 6 chance of winning.</li>
+								<li>After the 3rd Play attempt, wallet play tracker resets, limit is up - wait 24 hours to play again.</li>
+								<li>Win and you get rewarded a portion of the interest revenue received from Bank funded projects.</li>
+								<li>You can use your win anytime you want, or sit on it until ready to sell.</li>
+								<li>Winning also means Sell Tax is now 0%.</li>
+								<li>Not winning after 6 play attempts has a relief route.</li>
+								</br>
+							</div>
+                        	<div id="hodl_game">
+								<span id="inplay_animation"></span>
+								<div class="wrapper">
+									<div id="confetti-wrapper">
+									</div>
+								</div>
+								<img id="gunshot" src="img/gunshot.png" class="gun-shot" style="display:none;">
+								<div class="triggerBtnsHold">
+									<div id="pullTrigger" class="spin" title="transaction will be submitted to blockchain.">Pull Trigger</div>
+									<div id="playMsg"></div>
+								</div>
+								<div id="openInstruct" title="click to open or close instructions">
+									<div><i class='far fa-file-alt'></i> toggle play-guide</div>
+								</div>
+								<div class="statusHold">
+									<span id="playstatePC">plays total: --- </span>
+									<span id="playstateLP">last cooldown: --- </span>
+									<span id="playstateNP">next challenge: --- </span>
+									<span id="playstateST">Sell Tax: --- </span>
+									<span id="playstateRCe">Reward Size: --- </span>
+								</div>
+                                <div id="gun_holder" class="gun_holder">
+                                    <div id="pistoldrum" class="cylinder_cont">
+                                        <div id="cylinder_outer" class="loader_wait">
+                                            <div id="cylinder_inner" class="inner_wait"></div>
+                                        </div>
+                                    </div>
+                                    <div class="revolver"></div>
+                                </div>
+								<div id="congratsModal" class="modal">
+									<!--     <span class="emoji">👏</span> -->
+									<span class="emoji round">📯💰</span>
+									<h1 title="valyrian for praises to you">Rijes nykeāōt. You won!</h1><!-- praises to you: Rijnondi, Donis!-->
+								</div>
+								<div id="failedModal" class="modal">
+									<span class="emoji round">🗡🔮</span>
+									<h1 title="valyrian for seven hells!">Sīkudi nopāzmi!! You lost.</h1>
+								</div>
+                            </div>
+                        </div><!-- CLOSE RR_PLAY_CONTAINER -->
+					</section>
+				</div>
+			</br>
+			<h4>...</h4>
+			<div class="tokenswaps">
+				<div class="port_beneficiary_hold">
+					<div class="port_beneCard">
+						<div class="mpcard_details"><span class="_beneT">my Beneficiary:</span><span class="_beneD _respValue" id="pbCard_bene">---</span></div>
+						<div class="mpcard_details"><span class="_beneT">Payouts Total:</span><span class="_beneD _respValue" id="pbCard_total">---</span></div>
+						<div class="mpcard_details mpcd_last markred"><span class="_beneT">Payouts Value:</span><span class="_beneD _respValue" id="pbCard_value">---</span></div>
+					</div>
+				</div>
+			</div>
+                <h4>Reward Claims</h4>
+				<div class="myclaimsHold">
+					<div class="myclaimscard_normal">
+						<div class="dropdown">
+							<span id="claimfrom" class="claimfrom multisrc_claim">from Wallet</span>
+							<div class="dropdown-content">
+								<p id="cs_1" class="drop_sel">Wallet Tokens</p>
+								<p id="cs_2" class="drop_sel">Share Lease</p>
+								<p id="cs_3" class="drop_sel">Staked Tokens</p>
+							</div>
+						</div>
+						<div class="claimscard_summary">
+							<div class="mccard_details"><span class="mccardH">Token Balance:</span><span class="mccardD" id="sect_claims_w">---</span></div>
+							<div class="mccard_details"><span class="mccardH">Claims Value:</span><span class="mccardD" id="sect_claimed_w">---</span></div>
+							<div class="mccard_details mpcd_last"><span class="mccardH">Rewards Due:</span><span class="mccardD" id="sect_due_w">---</span></div>
+						</div>
+						<div id="claimscard_claim">
+							<div id="claim_fmw" class="claim_btn">Claim Rewards</div>
+						</div>
+						<div class="claims_history">
+							<span title="click to see history" id="show_claims_w">show history &emsp;<img src="img/info.png" /></span>
+						</div>
+					</div><!-- claim card -->
+
+					<div class="myclaimscard_normal">
+						<div class="benefactor_hold">
+							<span class="claimfrom benefactor">my Donors</span>
+							<span id="benef_settings"></span>
+						</div>
+						<div class="claimscard_summary">
+							<div class="mccard_details"><span class="mccardH">Benefactors Count:</span><span class="mccardD" id="bene_count">---</span></div>
+							<div class="mccard_details mpcd_last"><span class="mccardH">Net Reward Value:</span><span class="mccardD" id="bene_value">---</span></div>
+							<div id="claimscard_claim">
+								<div id="claim_fmb" class="claim_btn">Claim Donations</div>
+							</div>
+							<div class="claims_history">
+								<span title="click to see your donors" id="show_benefactors">show benefactors &emsp;<img src="img/info.png" /></span>
+							</div>
+						</div>
+					</div><!-- donors card -->
+				</div><!-- Holder - claim cards -->
+				
+            </div>
+			<div class="actionablePort"><!-- state changing calls: sharelease, stake, vote, bornfire -->
+				<span class="actionPortLabel">State Changing</span>
+				<!-- Projects Funding-->
+				<div class="actionCard">
+					<div class="actCardTop">
+						<div class="actCardTop_title">Projects Funding <img src="img/info.png" title="This shows the summary of all project fair launches you participated in and the perfomance" /><div id="dot_lsrD" class="dot blockel"></div></div>
+						<div class="actCardTopData"><!-- card infor -->
+						<!-- Funding VIEW -->
+							<div class="inforview">
+								<div class="mpcard_details"><span class="_lsrT">Projects:</span><span class=" _lsrTData _respValue" id="_lsrD_taker">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Funded:</span><span class="_lsrTData _respValue" id="_lsrD_tokens">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Repaid:</span><span class="_lsrTData _respValue" id="_lsrD_ask">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Withdrawn:</span><span class="_lsrTData _respValue" id="_lsrD_claims">---</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Projects Loaning -->
+				<div class="actionCard">
+					<div class="actCardTop">
+						<div class="actCardTop_title">Projects Loaned <div id="dot_lsrT" class="dot blockel"></div><img src="img/info.png" title="This shows the summary of all project you loanedand the perfomance" /></div>
+						<div class="actCardTopData"><!-- card infor -->
+						<!-- Loans VIEW -->
+							<div class="inforview">
+								<div class="mpcard_details"><span class="_lsrT">Projects:</span><span class="_lsrTData _respValue" id="_lsrT_lessor">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Loaned:</span><span class="_lsrTData _respValue" id="_lsrT_tokens">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Repaid:</span><span class="_lsrTData _respValue" id="_lsrT_ask">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Withdrawn:</span><span class="_lsrTData _respValue" id="_lsrT_claims">---</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Deposits Cash and LP -->
+				<div class="actionCard"><!-- stake -->
+					<div class="actCardTop">
+						<div class="actCardTop_title">Vault Deposits <div id="dot_lsrStk" class="dot blockel"></div>&nbsp;<img src="img/info.png" title="Summary of all the deposits in and out of our Vaults." /></div>
+						<div class="actCardTopData"><!-- card infor -->
+							<div class="inforview">
+								<div class="mpcard_details"><span class="_lsrT">Cash Deposits:</span><span class="_lsrTData _respValue" id="_stk_tokens">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">Cash Withdrawals:</span><span class="_lsrTData _respValue" id="_stk_duration">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">LP Deposits:</span><span class="_lsrTData _respValue" id="_stk_claims">---</span><span id="_portBtnClaimSTK" class="portfolioBtn">Claim</span></div>
+								<div class="mpcard_details"><span class="_lsrT">LP Locks:</span><span class="_lsrTData _respValue" id="_stk_expiry">---</span></div>
+								<div class="mpcard_details"><span class="_lsrT">LP Collateral:</span><span class="_lsrTData _respValue" id="_stk_rrpass">---</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="hypecard_poll" class="actionCard" rbw-include-html="resources/_incl_rbw.html"></div>
+				
+			</div><!-- ACTIONABLE SECTION CLOSE -->
+        </section>
+         
+        <section class="portfolioSect">
+			
+
+			<!-- STATIC CALLS SECTION OF ATM: asv etc -->
+			<div class="unactionablePort">
+				<span class="actionPortLabel">Static View</span>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">liquidity Funding</span><span class="mbcard_title"></span>&emsp;<img title="this is a community BUIDL you can invest liquidity capital and get it back with interest. paid directly from fees revenue before any allocations. see the liquidity fund card above to track raised liquidity and the repayment pool size." src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more" style="height:auto;">
+						<span id="mbcard_liqFunded" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_fundingRepaid" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">Token Cost</span><span class="mbcard_title"></span>&emsp;<img title="Average cost per token, in eth." src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_acpt" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_avgain" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">myWallet Tax Status</span><span class="mbcard_title"></span>&emsp;<img title="check your tax status here." src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_taxstatus" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_forefeits" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">Bank Heist Plays</span><span class="mbcard_title"></span>&emsp;<img title="Take the Bank Heist challenge, a game of chance in Russian Roulette." src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_reimburseAmnt" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_reimburseRewards" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">Blacklist Status</span><span class="mbcard_title"></span>&emsp;<img title="If youre blacklisted it means your wallet is a bot account. Or your wallet was involved in some crime. You cant sell or transfer them. You cant claim rewards from them either." src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_blacklisted" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_blacklistRights" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">myAssets</span><span class="mbcard_title"></span></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_netassets" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_netassetsValue" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">netRewards Claimed</span><span class="mbcard_title"></span>&emsp;<img title="Sum of all rewards claimed to date. Wallet & from Benefactors who assigned your wallet." src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_netrewards" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_netrewardsBreakdown" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+				<div class="mybankcard">
+					<div class="mbcard_title"><span class"">netRewards Due</span><span class="mbcard_title"></span>&emsp;<img title="All combined rewards due from: Wallet, Donors" src="img/info.png" /></div>
+					<div class="mbcard_detail mbcard_more">
+						<span id="mbcard_netrewardsD" class="mbcard_more_span"> ---- </span>
+						<span id="mbcard_netrewardsDBreakdown" class="mbcard_more_span"> ---- </span>
+					</div>
+				</div>
+			</div>
+    </main>
+
+<div id="popupNotify" style="display:none;">
+	<div id="pNotifyX">x</div>
+    <div class="popupSuccess"></div>
+    <div class="popupBody">
+        <span class="popupText" id="popupTitle"></span>
+        <span class="popupText" id="popupAmounts"></span>
+        <span class="popupText" id="popupTxhash"></span>
+    </div>
+    <div id="pNt" class="popupNotify_timer"></div>
+</div>
+
+<section id="holf_p6">
+	<div class="contacts_cont">
+    	<span>socials jump:</span></br></br>
+        <a class="social_links" href="https://twitter.com/betinuBSC" target="_blank" alt="Twitter Page" title="Go to Twitter page"><img src="img/twitter.svg" width="32px"/></a>
+        <a class="social_links" href="https://t.me/betinuBSC" target="_blank" alt="Telegram Group" title="Go to Telegram group"><img src="img/telegram.svg" width="32px"/></a>
+	</div>
+</section>
+
+<!-- LOADING OVERLAY-->
+<div id="loadOverlay" style="background: radial-gradient(#1f1f1f, #000); position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:2000;">
+    <div class="loading_badge_place" style="position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);height:15vw;width:15vw;text-align:center;z-index:150;background: url('img/jeetfundwhite.png') no-repeat; background-position: center; background-repeat:no-repeat;  background-size:300px auto;">
+        
+    </div>
+</div>
+<!-- DRY /MODULAR DEVELOPMENT -->
+<script>
+	includeHypecards();
+	includeRBW();
+</script> 
+
+</body>
+</html>

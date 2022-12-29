@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head> 
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LDVJJSFRP0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LDVJJSFRP0');
+</script>
+
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> long for <meta charset="utf-8" />  -->
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<title>BankHall</title>
+<base href="{{site.baseurl}}" />
+<link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+<link rel="manifest" href="img/fav/site.webmanifest">
+<link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="img/fav/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-config" content="img/fav/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="stylesheet" type="text/css" href="css/_menu.css">
+<link rel="stylesheet" type="text/css" href="css/_bankhall.css">
+<link rel="stylesheet" type="text/css" href="css/sweetalert/sweetalert.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="js/_walletstatus.js"></script>
+<script type="text/javascript" src="js/_bankhall.js"></script>
+<script type="application/javascript" src="js/sweetalert/sweetalert.min.js"></script>
+
+<script>
+//Responsive Nav
+function updatemenu() {
+  if (document.getElementById('responsive-menu').checked == true) {
+    document.getElementById('menu').style.borderBottomRightRadius = '0';
+    document.getElementById('menu').style.borderBottomLeftRadius = '0';
+  }else{
+    document.getElementById('menu').style.borderRadius = '0px';
+  }
+}
+
+
+</script>
+</head>
+
+<body>
+    <main id="main">
+        <nav id='menu'>
+            <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+            <div class="blockstatehold" id="blockstatehold" style="position: absolute;top:10px;right:0;left:0;margin-right:auto;margin-left:auto;">
+                <div class="showingshold">
+                    <div class="wallets walletpur" style="display:none;">
+                        <div class="wallet_tab">
+                            <span id="wallet_balance">...</span><img src="img/walletimg.svg" /><span id="wallet_id">0x...</span>
+                        </div>
+                     </div>
+                     <div class="wallets waiting_init">-----</div>
+                     <div class="wallets wallet_connect">Connect Wallet</div>
+                     <div class="wallets network_switch">Switch Network</div>
+                </div>
+            </div>
+            <ul>
+                <li class="go_home"><a href='index.html'><img src="img/dogebankerLOGO.png" alt="Logo" class="block-header-logo__image"></a></li>
+                <div class="chainstat">
+                    <div id="blocknumber" class="blockel">-------</div><div class="dot blockel"></div>
+                </div>
+                <div class="menu_float">
+                    <li><a href='portfolio.html'>Wallet</a></li>
+                </div>
+                <div class="menu_float" style="margin-right:4%;">
+                    <li><a href='bankhall.html'>Vault</a></li>
+                </div>
+                <div class="menu_float" style="margin-right:4%;">
+                    <li><a href='bankhall.html'>BankHall</a></li>
+                </div>
+            </ul>
+        </nav>
+        
+        <section class="sectionCenter">
+            <aside id="leftpaner">
+                <div class="bankSinnage">
+                    <h4>> Banking Hall</h4>
+                </div>
+                <div class="sal_navs_hold">
+                    <div class="saloonnavs" id="sal_main">Bank Funding</div>
+                </div>
+                <div class="sal_navs_hold">
+                    <div class="saloonnavs" id="sal_deriv">P2P Funding</div>
+                </div>
+                <div class="sal_navs_hold">
+                    <div class="saloonnavs" id="sal_deriv">Bank Loans</div>
+                </div>
+                <div class="sal_navs_hold">
+                    <div class="saloonnavs" id="sal_deriv">P2P Loans</div>
+                </div>
+                <div class="sal_navs_hold">
+                    <div class="saloonnavs" id="sal_deriv">Social Stream</div>
+                </div>
+                <section id="holf_p6">
+                    <div class="contacts_cont">
+                        </br>
+                        <a class="our_social_links" href="https://twitter.com/betinu" target="_blank" alt="Twitter Page" title="Go to Twitter page"><img src="img/twitter.svg" width="32px"/></a>
+                        <a class="our_social_links" href="https://t.me/betinuchat" target="_blank" alt="Telegram Group" title="Go to Telegram group"><img src="img/telegram.svg" width="32px"/></a>
+                        </br>
+                        <span>reach us:</span>
+                    </div>
+                </section>
+            </aside>
+            <!-- timeline of projects funded|loans|repaying -->
+            <div class="timelineHold">
+                <div class="feedsfilterDockHold">
+                    <div  class="streamtype" id="filterblockSwaps"><div class="eventAct" > <a href="#" > Requests</a></div></div>
+                    <div  class="streamtype" id="filterblockActive"><div class="eventAct" > <a href="#" > Funded</a></div></div>
+                    <div  class="streamtype" id="filterblockSaved"><div class="eventAct" > <a href="#" > Repayments</a></div></div>
+                    <div  class="streamtype" id="filterblockThotbox"><div class="eventAct" > <a href="#" > Apply</a></div></div>
+                    
+                    <div class="sitesearchhold" id="feedsearchhold">
+                        <form id="swap_searcher" action="" method="post">
+                           <input id="swapsearch" class="search-input" type="text" name="search" placeholder=" filter contract address.." autocomplete="off" spellcheck="false"  /> 
+                           <input type="submit" class="site_search_btn" value="" />
+                        </form>
+                    </div>
+                </div>
+                <div class="projectsTimeline">
+                    <div class="projectCard">
+                        <div class="kickoff">stamped: 15:00 GMT, 16 oct </div>
+                        <div class="projectLogoLeft" style="background-image:url('img/cutecorgi.jpg')"></div>
+                        <div class="projectName">Project X Doge</div>
+                        <div class="projectRaiseTarget">10 ETH</div>
+
+                        <div class="mbcard_detail rb_detail">
+                            <div class="parent_meter">
+                                <div id="meter_guage"></div><span class="measure">0%</span>
+                            </div>
+                        </div>
+                    
+                        <div class="raiseSummary">
+                            <div class="raise_S_tab _bullbear"><img src="img/bull2.png" width="18px"/><span id="popularity">mild</span></div>
+                            <div class="raise_S_tab _socials">
+                                <a class="social_links" href="https://twitter.com/dogebank" target="_blank" alt="TWT" title="Go to Twitter page"><img src="img/twitter.svg" width="32px"/></a>
+                                <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="TG" title="Go to Telegram group"><img src="img/telegram.svg" width="32px"/></a>
+                                <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="SC" title="Go to Etherscan"><img src="img/etherscan.svg" width="32px"/></a>
+                            </div>
+                            <div class="raise_S_tab _bookmarkjump">
+                                <a class="view_project" href="https://t.me/dogebank" target="_blank" alt="View" title="Open project">view</a>
+                                <img src="img/bookmark_.png" width="18px"/>
+                            </div>
+                        </div>
+                    </div><!-- project card ends-->
+                    <div class="projectCard">
+                        <div class="kickoff">stamped: 15:00 GMT, 16 oct </div>
+                        <div class="projectLogoLeft"  style="background-image:url('img/arcadeshib.png')"></div>
+                        <div class="projectName">Arcade Shib Sheriff</div>
+                        <div class="projectRaiseTarget">3.5 ETH</div>
+
+                        <div class="mbcard_detail rb_detail">
+                            <div class="parent_meter">
+                                <div id="meter_guage"></div><span class="measure">0%</span>
+                            </div>
+                        </div>
+                    
+                        <div class="raiseSummary">
+                            <div class="raise_S_tab _bullbear"><img src="img/bull2.png" width="18px"/><span id="popularity">hot</span></div>
+                            <div class="raise_S_tab _socials">
+                                <a class="social_links" href="https://twitter.com/dogebank" target="_blank" alt="TWT" title="Go to Twitter page"><img src="img/twitter.svg" width="32px"/></a>
+                                <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="TG" title="Go to Telegram group"><img src="img/telegram.svg" width="32px"/></a>
+                                <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="SC" title="Go to Etherscan"><img src="img/etherscan.svg" width="32px"/></a>
+                            </div>
+                            <div class="raise_S_tab _bookmarkjump">
+                                <a class="view_project" href="https://t.me/dogebank" target="_blank" alt="View" title="Open project">view</a>
+                                <img src="img/bookmark_.png" width="18px"/>
+                            </div>
+                        </div>
+                    </div><!-- project card ends-->
+                    <div class="projectCard">
+                        <div class="kickoff">stamped: 15:00 GMT, 16 oct </div>
+                        <div class="projectLogoLeft"   style="background-image:url('img/projectXlogo.png')"></div>
+                        <div class="projectName">Wild West Saloon</div>
+                        <div class="projectRaiseTarget">4 ETH</div>
+
+                        <div class="mbcard_detail rb_detail">
+                            <div class="parent_meter">
+                                <div id="meter_guage"></div><span class="measure">0%</span>
+                            </div>
+                        </div>
+                    
+                        <div class="raiseSummary">
+                            <div class="raise_S_tab _bullbear"><img src="img/bull2.png" width="18px"/><span id="popularity">mild</span></div>
+                            <div class="raise_S_tab _socials">
+                                <a class="social_links" href="https://twitter.com/dogebank" target="_blank" alt="TWT" title="Go to Twitter page"><img src="img/twitter.svg" width="32px"/></a>
+                                <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="TG" title="Go to Telegram group"><img src="img/telegram.svg" width="32px"/></a>
+                                <a class="social_links" href="https://t.me/dogebank" target="_blank" alt="SC" title="Go to Etherscan"><img src="img/etherscan.svg" width="32px"/></a>
+                            </div>
+                            <div class="raise_S_tab _bookmarkjump">
+                                <a class="view_project" href="https://t.me/dogebank" target="_blank" alt="View" title="Open project">view</a>
+                                <img src="img/bookmark_.png" width="18px"/>
+                            </div>
+                        </div>
+                    </div><!-- project card ends-->
+                    
+                </div>
+            </div>
+         </section>
+
+    </main>
+
+<div id="popupNotify" style="display:none;">
+	<div id="pNotifyX">x</div>
+    <div class="popupSuccess"></div>
+    <div class="popupBody">
+        <span class="popupText" id="popupTitle"></span>
+        <span class="popupText" id="popupAmounts"></span>
+        <span class="popupText" id="popupTxhash"></span>
+    </div>
+    <div id="pNt" class="popupNotify_timer"></div>
+</div>
+
+<!-- LOADING OVERLAY-->
+<div id="loadOverlay" style="background: radial-gradient(#1f1f1f, #000); position:fixed; top:0px; left:0px; width:100%; height:100%; z-index:2000;">
+    <div class="loading_badge_place" style="position: absolute;top: 50%;left: 50%;-ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%);height:15vw;width:15vw;text-align:center;z-index:150;background: url('img/footy-inu-blue.png') no-repeat; background-position: center; background-repeat:no-repeat;  background-size:300px auto;">
+        
+    </div>
+</div>
+
+</body>
+</html>
