@@ -44,6 +44,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 /***************************************************/
 #menu {
 	position:static;
+	position:relative;/* 30 dec update  */
 	display:block;
 	width:100%;
 	background-image: linear-gradient(to right, #ffb300, #2f1d1d, #1b1b1b, #151515, #1f1f1fdd, #1f1f1fdd, #151515, #1b1b1b, #2f1d1d, #ffb300);
@@ -56,6 +57,7 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	font: 17px/1.5 monospace, sans-serif, "Helvetica Neue", Helvetica, Arial !important;
 	font-weight:600;
 	border-bottom:2px solid #ffb300;
+	z-index:4;
 }
 #menu ul, #menu li {
 	margin: 0 auto;
@@ -86,13 +88,15 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 .menu_float{
 	display:inline-block;
 	float:right;
-	margin-right:8%;
+	margin-right:2%;
 }
 #menu li.go_home a img{
+	position: relative;
+	top: -15px;
 	display:block;
 	margin:0px auto;
 	width:auto;
-	height:10vh;
+	height:8vw;
 	object-fit: contain;
 	object-position: 50% 50%;
 }
