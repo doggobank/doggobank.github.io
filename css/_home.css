@@ -101,6 +101,7 @@ div.goalcont ul{
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8) ), url('../img/cash.png') no-repeat;
   background-position: center;
   background-size:cover;
+  border-bottom: 2px solid #ffb300;
 }
 @media (max-width: 680px){
   #holf_p3 {
@@ -245,7 +246,6 @@ div.goalcont ul{
     color: #146C80;
   }
 }
-
 .doggobankTitle{
   position: relative;
   margin: 0px auto;
@@ -805,6 +805,97 @@ div.goalcont ul{
     rgba(0, 0, 0, 0.8) 13px,
     transparent 10px
   ) !important;
+}
+/*==================================
+    TIMELINE
+===================================*/
+.Container_container__WAGEk {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+  font-weight: 400;
+  font-family:monospace, sans-serif, "Helvetica Neue", Helvetica, Arial !important;
+  font-size: clamp(14px, 1vw, 17px);
+  line-height: 21px;
+  color:#FFF;
+}
+.Container_container__WAGEk h2{
+  font-weight: 400;
+  line-height: 21px;
+}
+.Roadmap_roadmapGrid__cKmwx {
+  display: grid;
+  grid-column-gap: 1vw;
+  column-gap: 1vw;
+  grid-template-areas:
+  "a b" 
+  "c d" 
+  "e f" 
+  "g h" 
+  "i j";
+}
+.Roadmap_itemOne__Q3yOw {
+  grid-area: a;
+  margin-left: auto;
+}
+.Roadmap_itemTwo__2bPYf {
+  grid-area: d;
+}
+.Roadmap_itemThree__ZZs5e {
+  grid-area: e;
+  margin-left: auto;
+}
+.Roadmap_itemFour__4VmPh {
+  grid-area: h;
+}
+.Roadmap_itemFive__FmZiS {
+  grid-area: i;
+  margin-left: auto;
+}
+.Roadmap_roadmapItem__LU10a h3 {
+  line-height: 50px;
+  margin-bottom: 15px;
+  text-align: right;
+}
+.Roadmap_roadmapItem__LU10a p {
+  line-height: 160%;
+  text-align: right;
+  max-width: 364px;
+}
+.Roadmap_itemTwo__2bPYf h3, .Roadmap_itemTwo__2bPYf p {
+  text-align: left;
+}
+.Roadmap_itemFour__4VmPh h3, .Roadmap_itemFour__4VmPh p {
+  text-align: left;
+}
+/* BORDER GLOW TIMELINE */
+.glow1{
+  border: 1px solid transparent;
+  border-radius: 2vw;
+  background-image: linear-gradient(#000,#000),linear-gradient(to bottom right,#022c0a,#ffa500 56.46%,#ffa500 86.35%);
+  background-origin: border-box;
+  background-clip: padding-box,border-box;
+  padding:1vw 2vw;
+  box-sizing: border-box;
+}
+.glow2{
+  border: 1px solid transparent;
+  border-radius: 2vw;
+  background-image: linear-gradient(#000,#000),linear-gradient(to bottom right,#022c0a,#ffa500 56.46%,#ffa500 86.35%);
+  background-origin: border-box;
+  background-clip: padding-box,border-box;
+  padding:1vw 2vw;
+  box-sizing: border-box;
+}
+.glow3{
+  border: 1px solid transparent;
+  border-radius: 2vw;
+  background-image: linear-gradient(#000,#000),linear-gradient(to bottom right,#ffa500,#022c0a 56.46%,#ffa500 86.35%);
+  background-origin: border-box;
+  background-clip: padding-box,border-box;
+  padding:1vw 2vw;
+  box-sizing: border-box;
 }
 /*==================================
     FEATURES CONTINUED 
