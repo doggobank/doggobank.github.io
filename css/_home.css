@@ -941,6 +941,13 @@ div.goalcont ul{
   background-position:right center;
   border-top:2px solid #ffb300;
 }
+.meetthedoxx{
+  padding:0 5px 15px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: clamp(14px, 2vw, 16px);
+  color:#fff;
+}
 .teamHolder{
   position:relative;
   width:100%;
