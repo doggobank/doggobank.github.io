@@ -746,7 +746,25 @@ div.goalcont ul{
  animation: none;
 }
 /*END SHAKER*/
-
+/*==================================
+    HOW IT WORKS
+===================================*/
+.howitworksIMG{
+  margin:0px auto;
+}
+.howitworksIMG img{
+  display: block;
+  margin: 0px auto;
+  width:80%;
+}
+@media screen and (max-width: 600px) {
+  .howitworksIMG img{
+    width: 100%;
+  }
+}
+/*==================================
+    CHAINS
+===================================*/
 .chainsavailable{
   position:relative;
   width:100%;
@@ -833,7 +851,8 @@ div.goalcont ul{
   "c d" 
   "e f" 
   "g h" 
-  "i j";
+  "i j"
+  "k l";
 }
 .Roadmap_itemOne__Q3yOw {
   grid-area: a;
@@ -853,6 +872,9 @@ div.goalcont ul{
   grid-area: i;
   margin-left: auto;
 }
+.Roadmap_itemFive__3Pcy2F{
+  grid-area: l;
+}
 .Roadmap_roadmapItem__LU10a h3 {
   line-height: 50px;
   margin-bottom: 15px;
@@ -867,6 +889,9 @@ div.goalcont ul{
   text-align: left;
 }
 .Roadmap_itemFour__4VmPh h3, .Roadmap_itemFour__4VmPh p {
+  text-align: left;
+}
+.Roadmap_itemFive__3Pcy2F h3, .Roadmap_itemFive__3Pcy2F p{
   text-align: left;
 }
 /* BORDER GLOW TIMELINE */
