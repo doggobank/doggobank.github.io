@@ -675,8 +675,8 @@
 	letter-spacing: .15em;
 }
 .donateTitle{
-	color:#e59a28 !important;
-	background-color: rgba(0,0,0,.4);
+	color:#000 !important;
+	background-color: #fff;
 }
 .fas{
     display:block;
