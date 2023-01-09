@@ -100,6 +100,18 @@ a:hover, a:active, a:focus { /* this group of selectors will give a keyboard nav
 	object-fit: contain;
 	object-position: 50% 50%;
 }
+@media (max-width: 680px){
+    #menu li.go_home a img {
+      top:0;
+	  width:auto;
+	  height:60px;
+    }
+	.go_home a{
+		max-width:70px;
+		height:52px;
+		border-bottom:0.5px dotted #ffb300 !important;
+	}
+}
 #menu a {
 	display: block;
 	line-height: 52px;

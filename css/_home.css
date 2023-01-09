@@ -1,9 +1,9 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Rye&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Exo+2:200i');
 @font-face {
   font-family: neon;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+  font-display: swap;
 }
 :root {  
   /* USED WITH EXO FONT --- Set neon color */
@@ -326,8 +326,16 @@ div.goalcont ul{
   font-family: Arial;
   text-shadow: 0 0 1px #000;
 }
+@-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:5%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:5%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:40%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:60%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:70%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:90%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
+/*
+ORIGINAL SAVED
 @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%{-webkit-transform:translateX(0px);transform:translateX(0px)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}100%{-webkit-transform:translateX(0px);transform:translateX(0px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%{transform:translateX(0px)}50%{transform:translateX(80px)}100%{transform:translateX(0px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}
-
+*/
+@media (max-width: 680px){
+  .snowflake {
+    display:none;
+  }
+}
 #doggobanklogo{
   margin:0px auto;
   position:relative;
@@ -937,8 +945,6 @@ div.goalcont ul{
   font-weight:600;
   line-height: 2;
   color:#ffb300;
-  background: url("../img/chips_vertical.png") no-repeat;
-  background-position:right center;
   border-top:2px solid #ffb300;
 }
 .meetthedoxx{
@@ -987,6 +993,77 @@ vertical-align: middle;
   text-align:left;
   padding:5px;
   box-sizing: border-box;
+}
+/*==================================
+    TOKENOMICS SECTION
+===================================*/
+.tokenomicsHold{
+  position:relative;
+  width:100%;
+  max-width:1500px;
+  margin:0px auto;
+  padding:1vh 3vw;
+  box-sizing: border-box;
+  font-family:monospace, sans-serif, "Helvetica Neue", Helvetica, Arial !important;
+  font-size: clamp(14px, 2vw, 17px);
+  font-weight:600;
+  line-height: 2;
+  color:#ffb300;
+  border-top:2px solid #ffb300;
+}
+.tokenomicsHold img{
+  max-width:500px;
+  display: block;
+  margin: 0px auto;
+  width: 80%;
+}
+.tax_distriBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom:50px;
+}
+.tax_distriBar > div {
+  flex-basis: 350px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  border-radius: 10px !important;
+}
+@media (max-width: 600px){
+  .tax_distriBar > div {
+    flex-basis: 350px;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    border-radius: 10px !important;
+  }
+}
+.taxesHold {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.tax_distriBar > div > ul > li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding-left: 15px;
+  position: relative;
+}
+.tax_distriBar > div > ul > li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  line-height: 24px;
+  align-items: center;
+}
+.tax_distriBar > div > ul > li {
+  margin-bottom: 15px;
+  font-family:monospace, sans-serif, "Helvetica Neue", Helvetica, Arial !important;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  line-height: 24px;
+  color: #fff;
 }
 /*==================================
     FEATURES CONTINUED 
@@ -1481,12 +1558,33 @@ details > summary::-webkit-details-marker {
 .social_links{
   display: inline-block;
 	margin:0 auto;
-  padding:2%;
+  padding:1%;
   box-sizing: border-box;
   background-color: #ffb300;
 }
 .social_links img{
 	color:#ffb300 !important;
+}
+.copyright{
+  position:relative;
+  margin-top:1vw;
+  padding:1vw 0;
+  box-sizing: border-box;
+  text-align: center;
+  color:#ffb300;
+  border-top:1px solid #ffb300;
+
+  font-family: monospace, sans-serif, "Helvetica Neue", Helvetica, Arial !important;
+  font-size: clamp(14px, 2vw, 16px);
+  line-height:1.5;
+}
+.copyright img{
+  display: inline;
+  margin:0 auto;
+  max-width:200px;
+}
+.copyright span{
+  color:#FFF;
 }
 /*===============================
       BOTTOM OF EVERY CSS FILE
