@@ -1482,11 +1482,13 @@ div.feature_aside{
   padding:15px 0;
   box-sizing: border-box;
 }
-main {
+/*
+.main {
 	position:relative;
   max-width: 820px;
   margin: 0 auto;
 }
+*/
 summary {
 	position:relative;
   font-size: clamp(14px 1vw 17px);
