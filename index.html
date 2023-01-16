@@ -35,7 +35,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,400&display=swap" rel="stylesheet"> 
 <link rel="stylesheet" type="text/css" href="css/_menu.css">
 <link rel="stylesheet" type="text/css" href="css/_home.css">
+<link rel="stylesheet" type="text/css" href="css/togglewidgets.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"><!-- font5 css stickers -->
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script type="text/javascript" src="js/mode.js"></script>
 <script async>
    
     //Responsive Nav
@@ -87,6 +92,59 @@
     <div class="snowflake">💰</div>
     <div class="snowflake">💵</div>
     <div class="snowflake">💰</div>
+    <div class="modeWindow">
+        <div id="ModeWidgets" title="this contract toggles between Auto LP Adding & Auto Buy & Burns per Tx. During uptrend Auto LP. During Dips Auto Burns.">
+            <div id="autoBurnSign" class="neon-blue">MODE: <span class="neon-purple">AutoBuy</span> & Burn</div>
+            <div id="autoLPSign" class="neon-blue">MODE: <span class="neon-purple">Auto</span> Liquidity</div>
+            <div id="burnModeWidget" class="section-center" style="display: none;">
+                <span id="bornfireSum">0 Auto Burnt</span>
+                <div class="chainstat">
+                    <div id="blocknumber" class="blockel">-------</div><div class="dot blockel"></div>
+                </div>
+                <div class="moon">
+                    <div></div><div></div><div></div>
+                </div>
+                <div class="shooting-star"></div><div class="shooting-star-2"></div>
+                <div class="star"></div><div class="star snd"></div><div class="star trd"></div><div class="star fth"></div><div class="star fith"></div>
+                <div class="circle"></div><div class="wood-circle"></div>
+                <div class="wood"></div>
+                <div class="tree-1"></div><div class="tree-2"></div>
+                <span id="brrrrr"><i class="kreep fas fa-horse"></i></span>
+                <div class="holdflame">
+                    <div class="back"></div>
+                    <div class="light"></div>
+                    <div id="bonfireCont" class="content">
+                        <div id="bornfire" class="fire">
+                            <div class="bottom"></div>
+                            <figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure><figure></figure>
+                        </div>
+                        <div class="reverse">
+                            <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+                        </div>
+                    </div><!-- content -->
+                </div><!-- holdflame -->
+                <svg style="z-index:1;" xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                        <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                    </defs>
+                </svg>
+            </div><!-- section center -->
+            <!-- donate -->
+            <div id="autoLPModeWidget" class="section-center"  style="display: none;" title="this contract toggles between Auto LP Adding & Auto Buy & Burns per Tx. During uptrend Auto LP. During Dips Auto Burns.">
+                <span id="rewardsSum">ETH total added:</span>
+                <span id="waterDrop1"><i class="fa-solid fa-droplet"></i></span>
+                <span id="waterDrop2"><i class="fa-solid fa-droplet"></i></span>
+                <span id="liquidityLevel"><i class="fa-solid fa-water"></i></span>
+                <div class="donateHead">
+                    <span class="donateTitle">15 to 30% tax Auto Added to LP</span>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="goalcont">
         <div class="container">
             <div class="neon">Doggo</div>
@@ -95,7 +153,7 @@
         <div id="doggobanklogo"></div>
         
         <div id="taglines">      
-            <span class="main_points"><h1 class="glitch">Doggo Bank is a Decentralised Bank on the Blockchain.</br>We are both a Launchpad & Crypto Lending Platform.</br>We Bankroll Fair Launches Initial Liquidity.</br>We facilitate Collateralized Crypto Loans to projects.</br>We accept LP tokens as collateral. <a href="about.html" target="_blank">READ MORE...</a></h1></span></br>
+            <span class="main_points"><h1 class="glitch">Doggo Bank is a Decentralised Funding Platform.</br>We are hybrid of a Launchpad & Crypto Lending Platform.</br>We Bankroll Fair Launches Initial Liquidity.</br>We facilitate Collateralized Crypto Loans to projects.</br>We recognise LP tokens as Funding Collateral. </br><a href="about.html" target="_blank">READ MORE...</a></h1></span></br>
         </div>
         <div class="p1_links_cont">
             <a class="p1_links" href="https://goerli.etherscan.io/address/" target="_blank">ETHERscan</a><a class="p1_links" href="https://app.uniswap.org/#/swap?chain=goerli&outputCurrency=0x0" target="_blank" title="GOERLI TESTNET">Uniswap</a><button class="p1_links" title="not available on Testnet">Dextools</button> </br>
@@ -117,7 +175,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Fund Fair Launches</div>
-                    <div class="fdetail fd_foot">We crowd fund Fair Launchinitial liquidity, funders get repaid directly from the funded project's taxes. I.e Contribute $100, receive $120 in a few hours from trading start.</div>
+                    <div class="fdetail fd_foot">Discover fair launches to finance risk-free and get repaid directly from funded project's taxes. I.e., Contribute $100, receive $120 in a few hours from trading start.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             </br>
@@ -127,7 +185,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Secure Interface</div>
-                    <div class="fdetail fd_foot">We want to provide a safe enviroment for our investors to fund projects in. As such: Projects that are funded by our contract have to implement our interface correctly to guarantee repayment.</div>
+                    <div class="fdetail fd_foot">We want to provide a safe environment where investors can fund their projects. As such, projects funded by our contract must implement our interface correctly to guarantee repayment.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             </br>
@@ -137,7 +195,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Zero application cost</div>
-                    <div class="fdetail fd_foot">Projects that apply for fair launch funding or crypto loans pay zero cost. They only have to repay with a fixed interest.</div>
+                    <div class="fdetail fd_foot">Projects requesting/applying for funding or loans pay no cost to us. They only have to repay with a fixed interest.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             </br>
@@ -147,7 +205,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Smart Funding with collateral.</div>
-                    <div class="fdetail fd_foot">When a project's Initial Liquidity is funded through our contract, the LP tokens minted go directly to our LP Vault. We recognise LP tokens as collateral.</div>
+                    <div class="fdetail fd_foot">When our function funds a project's Fair Launch initial liquidity, that project's LP tokens go directly to our vault. We recognize LP tokens as collateral.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             
@@ -160,7 +218,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Collaterised Crypto Loans</div>
-                    <div class="fdetail fd_foot">Loan your idle money to projects that need operational cash, collaterised by LP tokens. If a project implements taxed transactions then it qualifies for a loan if their volume is deemed sufficient to generate repayment money.</div>
+                    <div class="fdetail fd_foot">Loan your extra cash to projects looking for loans collateralized by LP tokens. Terms and procedures for requesting projects are different from fair launches.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             </br>
@@ -170,7 +228,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Deposit money into our fixed term vault</div>
-                    <div class="fdetail fd_foot">Projects or individuals can deposit money into our vault. The bank like any other, then uses this as capital to finance fair launches or issue collaterised loans, on behalf of depositors.</div>
+                    <div class="fdetail fd_foot">Projects or individuals can deposit money into our vault. The Bank uses this as capital to finance selected premium fair launches or issue collateralized loans like any other.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             </br>
@@ -180,7 +238,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">LP Tokens custodial services</div>
-                    <div class="fdetail fd_foot">We offer LP custodial services. During which you are also eligible to borrow money from the Bank using the same tokens in our custody.</div>
+                    <div class="fdetail fd_foot">Our LP tokens vault facilitates custodial service. During this, you can also borrow money from the Bank using the same.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
             </br>
@@ -190,7 +248,7 @@
                 </div>
                 <div class="feature_section">
                     <div class="fdetail fd_head">Grand scheme</div>
-                    <div class="fdetail fd_foot">Hundreds of fair launches happen each day, with almost all of them implementing taxed transactions. They can generate revenue. Our platform aims to finance them whilst allowing our contributors to also make money quickly with each launch or loan..</div>
+                    <div class="fdetail fd_foot">Our platform aims to open a new investment avenue for our investors all year round. Hundreds of fair launches happen each day, with millions in volume. We aim to tap into this with zero risk.</div>
                 </div>
             </div><!-- CLOSE FEATURE CARD -->
         </div><!-- close side section -->
@@ -204,7 +262,7 @@
             <h1 contenteditable spellcheck="false">what to expect</h1>
         </div>
     </br></br>
-        <div class="missionbrief" style="margin-top:0px;">Get access to metrics like these and monitor how the Bank is perfoming. Upon Beta relase, these will be split further between Bank & Wallets metrics.</div>
+        <div class="missionbrief" style="margin-top:0px;">Get access to metrics like these and monitor how the Bank is performing. Upon Beta release, these will be split further between Bank and Wallet metrics.</div>
         <div class="vaultTrackersHold">
             <!-- vault 1 - cash -->
             <div class="vaultTracker">
@@ -361,7 +419,7 @@
     </div>
     <div class="chainsavailable">
         <h1>Blockchains Supported</h1>
-        <div class="missionbrief">We plan on launching on Ethereum Mainnet first. This is because of the high volume and more supportive nature of investors on this chain.</br> In Q1 2023 will will start expanding onto other chains: Binance Smart Chain, Fantom, etc.</div>
+        <div class="missionbrief">We plan on launching on Ethereum Mainnet first. This is because of the high volume and more supportive nature of investors in this chain. </br>In Q1 2023, we will expand onto other chains: Binance Smart Chain, Fantom, etc.</div>
         <div class="chains">
             <div class="chainHold">
                 <div class="chainIcon"  style="background-image:url('img/ethereum.png')"></div>
@@ -432,11 +490,11 @@
             </div>
             <div class="glow1">
                 <ul>
-                    <li><span>60%</span><span>Marketing/Operations</span></li>
-                    <li><span>15%</span><span>Toggle: Auto LP/Burns</span></li>
-                    <li><span>10%</span><span>Team, Admins, Mods</span></li>
-                    <li><span>10%</span><span>Reflections (48hr delay)</span></li>
-                    <li><span>5%</span><span>Charity (48hr delay)</span></li>
+                    <li><span>30%</span><span>Marketing</span></li>
+                    <li><span>30%</span><span>Biz Dev <small>(marketing if none)</small></span></li>
+                    <li><span>10%</span><span>Toggle: Auto LP/Burns</span></li>
+                    <li><span>25%</span><span>Reflections</span></li>
+                    <li><span>5%</span><span>Charity</span></li>
                 </ul>
             </div>
         </div>
@@ -450,22 +508,22 @@
             <div class="teamMember">
                 <div class="tmatePic" style="background-image:url('img/team/curiousdevc.png')"></div>
                 <div class="tmateName">Curious Dev C @defirancher</div>
-                <div class="tmateProfile">Founder. Lead Developer, Fullstack Senior Engineer with 10 years experience.</div>
+                <div class="tmateProfile">Founder - Lead Developer, Fullstack Senior Engineer with ten years of experience..</div>
             </div>
             <div class="teamMember">
                 <div class="tmatePic" style="background-image:url('img/team/tehgoldenbuddha.png')"></div>
                 <div class="tmateName">Teh Golden Buddha  @cryptoniic</div>
-                <div class="tmateProfile">CoFounder. Head of Business Development. Lead Strategist. Crypto Enthusiast.</div>
+                <div class="tmateProfile">CoFounder - Head of Business Development, Lead Strategist, Crypto Enthusiast.</div>
             </div>
             <div class="teamMember">
                 <div class="tmatePic" style="background-image:url('img/team/bluebone.png')"></div>
                 <div class="tmateName">Blue Bone @bluebone</div>
-                <div class="tmateProfile">Senior Developer +5 years, Marketing Manager with +20 years. Serial crypto project launcher.</div>
+                <div class="tmateProfile">Senior Developer - Project Developer with 5+ years, Marketing Executive with 20+ years, Crypto Brand Specialist.</div>
             </div>
             <div class="teamMember">
                 <div class="tmatePic" style="background-image:url('img/team/elona.png')"></div>
                 <div class="tmateName">Elona @ELONA_SCHOOL_OF_CRYPTO</div>
-                <div class="tmateProfile">Senior Sales Manager. Community Building Expert and Lead. Crypto Startup Expert.</div>
+                <div class="tmateProfile">Senior Sales Manager - Community Building Expert and Lead Social Manager, Crypto Startup Expert.</div>
             </div>
         </div><!--
         </br></br>
@@ -494,79 +552,79 @@
         	<details>
                 <summary>What is this?</summary>
                 <div class="faq__content">
-                    <p>This is a Decentralised Bank designed to bank all Projects on the BlockChain. From Fair Launch Initial Liquidity to loans for already established projects, and individual investors who aim to keep their money at work.</p>
+                    <p>This is a Decentralised Bank designed to Bank all Projects on the BlockChain, from Fair Launch Initial Liquidity to loans for already established projects and individual investors who aim to keep their money at work.</p>
                </div>
             </details>
             <details>
                 <summary>Inspiration?</summary>
                 <div class="faq__content">
-                    <p>The idea was born in October 2022 during the soccer betting hype, upon trying to fair launch a project. Only to realise the ETH in hand wasnt ample enough to attract investors, compared to rival projects. That launch was cancelled and the idea for Doggo Bank was born. Fair Launches are here to stay, and Doggo Bank introduces an alt approach, besides private sales, that attracts investors and guarantee repayment without giving them tokens in exchange?</p>
+                    <p>The idea was born in October 2022 during the soccer betting hype, upon trying to fair launch a project. Only to realize the ETH in hand needed to be ampler to attract investors, compared to rival projects. That initial launch was canceled, and the idea for Doge Bank was born. Fair launches are here to stay, and Doge Bank introduces an alt approach, besides private sales, that attracts investors and guarantee repayment without giving them tokens in exchange.</p>
                 </div>
             </details>
             <details>
                 <summary>Who can get funded?</summary>
                 <div class="faq__content">
-                    <p>Any new project thats launching can get funded.</p>
+                    <p>Any new project that's launching can get funded.</p>
                 </div>
             </details>
             <details>
                 <summary>Whats the procedure?</summary>
                 <div class="faq__content">
-                    <p>A project simply needs to make use of our solidity functions/interface in their Smart Contract. A guide will be made soon for developers. Once implemented correctly you can go ahead and apply on our Smart Contract. You pay nothing to get funded.</p>
+                    <p>A project must use our solidity functions/interface in their Smart Contract. A guide will be made soon for developers. Once implemented correctly, you can apply on our Smart Contract. You pay nothing to get funded.</p>
                 </div>
             </details>
             <details>
                 <summary>How the Bank funds these projects?</summary>
                 <div class="faq__content">
-                    <p>The Bank owns a Fixed Term Deposits Vault for ETH, from this we move capital to the Meme Bank Smart Contract to fund projects, and charge a fixed interest to all projects funded. From the profits after repayment, we sent dividents back to the Vault for depositors to withdraw as passive income.</p>
+                    <p>The Bank owns a Fixed Term Deposits Vault for ETH; from this, we move the capital to the Meme Bank Smart Contract to fund projects and charge a fixed interest to all projects funded. From the profits after repayment, we sent dividends back to the Vault for depositors to withdraw as passive income.</p>
                 </div>
             </details>
             <details>
                 <summary>How Individual Wallets funds these projects?</summary>
                 <div class="faq__content">
-                    <p>Like on any launchpad, wallets can come discover projects looking for Initial Liquidity or Loans. They simply wait for projects to be vetted by the Bank and be approved, once approved the crowd funding can begin.</p>
+                    <p>Like on any launchpad, wallets can discover projects looking for Initial Liquidity or Loans. They wait for projects to be vetted by the Bank and approved; crowdfunding can begin once approved.</p>
                 </div>
             </details>
             <details>
                 <summary>How do Investors/Wallets get repaid</summary>
                 <div class="faq__content">
-                    <p>Each project that applies for funding has to implement our in-house designed function, that takes from tax revenue directly before sending any money to any other wallets like marketing, auto liquidity adding, business development, reflections etc. Repayments to our investors come first. With a 20% interest. The higher the volume the quicker the investors get their capital back.</p>
+                    <p>Each project that applies for funding has to implement our in-house designed function, which takes from tax revenue directly before sending any money to any other wallets like marketing, auto liquidity adding, business development, reflections, etc. Repayments to our investors come first. With a 20% interest. The higher the volume, the quicker the investors get their capital back.</p>
                 </div>
             </details>
             <details>
                 <summary>What guarantee do investors have for repayment?</summary>
                 <div class="faq__content">
-                    <p>In addition to implementing our in-house repayment function, we expect to see the smart contract of those projects implement our "receiveFunding" function that uses Uniswaps addLiquidity function with our LP Vault smart contract address as the recipient of the LP tokens directly from Uniswap as collateral.</p>
+                    <p>In addition to implementing our in-house repayment function, we expect to see the smart contract of those projects implements our "receiveFunding" function that uses Uniswaps addLiquidity function with our LP Vault smart contract address as the recipient of the LP tokens directly from Uniswap as collateral.</p>
                 </div>
             </details>
             <details>
                 <summary>Are there costs for applying projects?</summary>
                 <div class="faq__content">
-                    <p>Expect a cost of Audit if your smart contract is long and carry complex other functions that could possibly: mint, stop trading, stop taxes, stop repayments. Only upon going through our Audit partners and passing the audit, will the project get approved for funding.</p>
+                    <p>Expect a cost of Audit if your smart contract is extended and carries complex other functions that could: mint, stop trading, stop taxes, stop repayments. Only upon going through our Audit partners and passing the Audit will the project get approved for funding.</p>
                 </div>
             </details>
             <details>
                 <summary>How does a project get a loan?</summary>
                 <div class="faq__content">
-                    <p>Already established projects with good liquidity are the only ones that qualify for a loan. The vetting process is lengthier than for initial liquidity funding. We expect the applicant to first deposit their project's LP tokens in our LP Vault and proceed to pass the matching address to our "requestFunding" function during application.</p>
+                    <p>Established projects with good liquidity are the only ones that qualify for a loan. The vetting process is lengthier than for initial liquidity funding. We expect the applicant to first deposit their project's LP tokens in our LP Vault and proceed to pass the matching address to our "requestFunding" function during application.</p>
                 </div>
             </details>
             <details>
                 <summary>Can individuals get loans?</summary>
                 <div class="faq__content">
-                    <p>Only projects can get loans. We only recognise LP tokens as sufficient collateral. Projects that implement taxed transactions in their Smart Contract. Its possible they may face cashflow shortages in their bid to expand the projects utility, a utility they know will bring more investors and in turn more volume, that is our target market.</p>
+                    <p>Only projects can get loans. We only recognize LP tokens as sufficient collateral, so only projects implementing taxed transactions in their Smart Contract. They may face cashflow shortages in their bid to expand the project's utility, which they know will bring more investors and, in turn, more volume; that is our target market.</p>
                 </div>
             </details>
             <details>
                 <summary>What happens when repayments fail?</summary>
                 <div class="faq__content">
-                    <p>We hold the debtors LP tokens in our LP Vault as collateral. Upon failure to repay, we simply pull the liquidity of that project in order to retrive the capital contributed by investors. We then go on to deposit it into the repayments pool for that project so investors can withdraw their capital back.</p>
+                    <p>We hold the debtor's LP tokens in our LP Vault as collateral. Upon failure to repay, we pull the liquidity of that project to retrieve the capital contributed by investors. We then deposit it into the repayments pool for that project so investors can withdraw their money back.</p>
                 </div>
             </details>
             <details>
                 <summary>Should we all deposit to our Fixed Term Deposits Vault?</summary>
                 <div class="faq__content">
-                    <p>You can keep your funds in your wallets, and contribute in a funding round directly from your wallet on a project of your choosing. The vault is meant for investors who do not have time to chase all Fair Launches or Loan requests.</p>
+                    <p>You can keep your funds in your wallets and contribute in a funding round directly from your wallet on a project of your choosing. The Vault is meant for investors who don't have the time needed to chase Fair Launches or Loan requests.</p>
                 </div>
             </details>
             <details>
@@ -578,13 +636,13 @@
             <details>
                 <summary>Future plans?</summary>
                 <div class="faq__content">
-                    <p>Payments platform is also on the cards based on NFTs linked to the Bank Fixed Term Deposits Vault.</p>
+                    <p>The payments platform is also in the cards based on NFTs linked to the Bank Fixed Term Deposits Vault.</p>
                 </div>
             </details>
             <details>
                 <summary>Code</summary>
                 <div class="faq__content">
-                    <p>All the source code for this project will be available on GitHub. Front end is pure/basic HTML, JS and CSS only. Our Smart Contracts will also be verified.</p>
+                    <p>All the source code for this project will be available on GitHub. The front end is pure/basic HTML, JS, and CSS only. Our Smart Contracts will also be verified.</p>
                 </div>
             </details>
         </div>
@@ -593,11 +651,11 @@
 <footer id="holf_p6">
 	<div class="contacts_cont">
     	<span>Join Us</span></br></br>
-        <a class="social_links" href="https://twitter.com/" target="_blank" alt="Twitter Page" title="Go to Twitter page"><img src="img/twitter.svg" alt="twitter" width="32px"/></a>
-        <a class="social_links" href="https://t.me/" target="_blank" alt="Telegram Group" title="Go to Telegram group"><img src="img/telegram.svg" alt="telegram" width="32px"/></a>
-        <a class="social_links" href="https://medium.com/" target="_blank" alt="Medium" title="Go to Medium Page"><img src="img/medium-icon-svgrepo-com.svg" alt="medium" width="32px"/></a>
+        <a class="social_links" href="https://twitter.com/doggobank" target="_blank" alt="Twitter Page" title="Go to Twitter page"><img src="img/twitter.svg" alt="twitter" width="32px"/></a>
+        <a class="social_links" href="https://t.me/doggobankportal" target="_blank" alt="Telegram Group" title="Go to Telegram group"><img src="img/telegram.svg" alt="telegram" width="32px"/></a>
+        <a class="social_links" href="https://medium.com/doggobank" target="_blank" alt="Medium" title="Go to Medium Page"><img src="img/medium-icon-svgrepo-com.svg" alt="medium" width="32px"/></a>
         <a class="social_links" href="https://github.com/doggobank" target="_blank" alt="GitHub" title="Go to GitHub repository"><img src="img/github-svgrepo-com.svg" alt="github" width="32px"/></a>
-        <a class="social_links" href="mailto:" target="_blank" alt="Email" title="Email us"><img src="img/email-svgrepo-com.svg" alt="email" width="32px"/></a>
+        <a class="social_links" href="mailto:infor@doggobank.app" target="_blank" alt="Email" title="Email us"><img src="img/email-svgrepo-com.svg" alt="email" width="32px"/></a>
 	</div>
     <div class="copyright">
         <img src="img/logo.png" alt="Doggo Bank Logo" />
