@@ -366,9 +366,6 @@ ORIGINAL SAVED
     background: none !important;
   }
 }
-#doggobanklogo:hover:before{
-  animation:animate 1s linear 2;
-}
 @keyframes animate{
 	0%{
 	background-position: 0 -19vw;
@@ -973,6 +970,7 @@ ORIGINAL SAVED
 
   display: inline-block;
 vertical-align: middle;
+background-color: #000;
 }
 .tmatePic{
   margin:0px auto;
